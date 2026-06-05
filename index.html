@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Phones</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="navbar-content">
+      <h1>Nexus Phones</h1>
+      <p>Premium smartphone sourcing with personal service.</p>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>Premium smartphones, trusted locally.</h2>
+    <p>Original devices delivered with personal service for individuals and businesses everywhere.</p>
+    <a class="btn" href="#contact">Get in Touch</a>
+  </section>
+
+  <section class="card-section">
+    <div class="card">
+      <h3>Trusted supplier</h3>
+      <p>Long-term relationships built on reliability and honesty.</p>
+    </div>
+
+    <div class="card">
+      <h3>Premium devices</h3>
+      <p>Only authentic smartphones from carefully selected partners.</p>
+    </div>
+
+    <div class="card">
+      <h3>Responsive service</h3>
+      <p>Fast, friendly communication via WhatsApp whenever you need it.</p>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>How do I place an order?</h3>
+        <p>Use the chat button or WhatsApp link to share your preferred device and we’ll confirm availability and delivery.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you deliver nationwide?</h3>
+        <p>Yes. We offer shipping and local delivery options based on your location and order size.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Are the phones authentic?</h3>
+        <p>Absolutely. We only work with verified suppliers and guarantee genuine devices.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What payment methods do you accept?</h3>
+        <p>We accept mobile money, bank transfer, and secure payment options depending on your preference after a request is made via whatsapp or instagram.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p class="contact-copy">Reach out to place an order, check stock availability, or request a personalised quote.</p>
+    <p><strong>Phone 1:</strong> +86 19732030587</p>
+    <p><strong>Phone 2:</strong> +256 756496135</p>
+    <p><strong>Email:</strong> nexusphonesshub@gmail.com</p>
+
+    <div class="button-group">
+      <button onclick="contactWhatsApp()">Chat on WhatsApp (Ph1)</button>
+      <button onclick="contactWhatsApp2()">Chat on WhatsApp (Ph2)</button>
+    </div>
+  </section>
+
+  <div class="chat-widget" id="chatWidget">
+    <button class="chat-toggle" id="chatToggle" onclick="toggleChat()">Need help? Chat now</button>
+    <div class="chat-window" id="chatWindow" aria-hidden="true">
+      <div class="chat-header">
+        <div>
+          <h3>Smart Assistant</h3>
+          <p>Ask about stock, pricing, delivery, or payment.</p>
+        </div>
+        <button class="close-chat" onclick="toggleChat()" aria-label="Close chat">×</button>
+      </div>
+      <div class="chat-body" id="chatBody"></div>
+      <div class="chat-footer">
+        <input id="chatInput" type="text" placeholder="Type your question..." aria-label="Chat input" onkeypress="if(event.key==='Enter') sendChatMessage()">
+        <button onclick="sendChatMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="social-section">
+    <h2>Follow Us & Stay Connected</h2>
+    <div class="social-buttons">
+      <a href="https://instagram.com/nexusphones" target="_blank" class="social-btn instagram" aria-label="Follow us on Instagram">
+        <span>Instagram</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Nexus Phones. All rights reserved.</p>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
