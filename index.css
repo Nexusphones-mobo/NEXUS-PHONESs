@@ -34,16 +34,11 @@ body.no-scroll {
 
 /* NAVBAR */
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 60;
   display: flex;
   justify-content: center;
   padding: 26px 20px;
-  background: rgba(8, 12, 20, 0.92);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
 }
 
 .navbar h1,

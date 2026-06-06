@@ -91,6 +91,7 @@ function initPageBehavior() {
   const socialSection = document.querySelector('.social-section');
   const navbar = document.querySelector('.navbar');
   const hero = document.querySelector('.hero');
+  
   // Helper to toggle visibility safely
   const setBtnVisible = (visible) => {
     if (!scrollTopBtn) return;
