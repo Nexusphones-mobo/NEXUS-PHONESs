@@ -27,11 +27,13 @@ const keywordResponses = [
 ];
 
 function contactWhatsApp() {
-  const message = encodeURIComponent('Hi, I’m interested in your phones. Can you provide more information?');
-  window.open(`https://wa.me/+8619732030587?text=${message}`, '_blank');
-}function contactWhatsApp2() {
-  const message = encodeURIComponent('Hi, I’m interested in your phones. Can you provide more information?');
-  window.open(`https://wa.me/+256756496135?text=${message}`, '_blank');
+  const message = encodeURIComponent('Hi, I’m interested in your devices. Can you provide more information?');
+  window.open(`https://wa.me/8619732030587?text=${message}`, '_blank');
+}
+
+function contactWhatsApp2() {
+  const message = encodeURIComponent('Hi, I’m interested in your devices. Can you provide more information?');
+  window.open(`https://wa.me/256756496135?text=${message}`, '_blank');
 }
 
 function toggleChat() {
@@ -44,7 +46,7 @@ function toggleChat() {
     if (!chatWindow.dataset.started) {
       chatWindow.dataset.started = 'true';
       addChatMessage('Hello! I’m here to help with stock, pricing, delivery, warranty, and bulk orders.', 'bot');
-      addChatMessage('Try asking: “Which phones are in stock?”, “What is the best phone under 500?”, “Can I order in bulk?”, or “How does your warranty work?”.', 'bot');
+      addChatMessage('Try asking: “Which devices are in stock?”, “What is the best phone or laptop under 500?”, “Can I order in bulk?”, or “How does your warranty work?”.', 'bot');
     }
   }
 }
