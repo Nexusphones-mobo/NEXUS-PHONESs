@@ -41,6 +41,8 @@ function toggleChat() {
   const isOpen = chatWindow.classList.toggle('open');
   chatWindow.setAttribute('aria-hidden', !isOpen);
 
+  document.body.classList.toggle('no-scroll', isOpen);
+
   if (isOpen) {
     document.getElementById('chatInput').focus();
     if (!chatWindow.dataset.started) {
@@ -130,6 +132,7 @@ function initPageBehavior() {
       loader.classList.add('loaded');
       setTimeout(() => {
         loader.style.display = 'none';
+        document.body.classList.remove('no-scroll');
       }, 600);
     }
   };

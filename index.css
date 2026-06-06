@@ -21,6 +21,11 @@ body {
   color: #ffffff;
 }
 
+body.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
 /* NAVBAR */
 .navbar {
   display: flex;
