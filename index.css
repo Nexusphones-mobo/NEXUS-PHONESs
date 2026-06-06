@@ -386,11 +386,7 @@ body.no-scroll {
 .contact {
   text-align: center;
   padding: 70px 22px 80px;
-  background-image: linear-gradient(rgba(9, 16, 31, 0.94), rgba(9, 16, 31, 0.94)), url('NEXUS.png');
-  background-repeat: no-repeat;
-  background-position: right 24px center;
-  background-size: 180px auto;
-  background-blend-mode: overlay;
+  background: linear-gradient(rgba(9, 16, 31, 0.94), rgba(9, 16, 31, 0.94));
 }
 
 .contact h2 {
