@@ -76,7 +76,7 @@
   </section>
 
   <div class="chat-widget" id="chatWidget">
-    <button class="chat-toggle" id="chatToggle" onclick="toggleChat()">Need help? Chat now</button>
+    <button class="chat-toggle" id="chatToggle" onclick="toggleChat()" aria-label="Open chat">💬</button>
     <div class="chat-window" id="chatWindow" aria-hidden="true">
       <div class="chat-header">
         <div>
@@ -105,6 +105,15 @@
   <footer>
     <p>© 2026 Nexus Phones. All rights reserved.</p>
   </footer>
+
+  <button id="scrollTopBtn" class="scroll-top" aria-label="Scroll to top">↑</button>
+  <div id="loaderOverlay" class="loader-overlay" aria-hidden="true">
+    <div class="loader-content">
+      <img src="NEXUS.jpg" alt="Nexus logo" class="loader-logo">
+      <p id="loaderMessage" class="loader-message">Loading…</p>
+      <button id="loaderEnterBtn" class="loader-enter-btn" type="button">Enter Nexus Phones</button>
+    </div>
+  </div>
 
   <script src="index.js"></script>
 </body>

@@ -83,3 +83,91 @@ function getBotResponse(message) {
 
   return 'I’m happy to help. Please tell me what you need: stock availability, a budget recommendation, delivery options, warranty details, bulk pricing, or accessories support.';
 }
+
+function initPageBehavior() {
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  const socialSection = document.querySelector('.social-section');
+  const navbar = document.querySelector('.navbar');
+
+  const observer = new IntersectionObserver((entries) => {
+    const [entry] = entries;
+    if (entry.isIntersecting) {
+      scrollTopBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
+    }
+  }, {
+    threshold: 0.25
+  });
+
+  if (socialSection) {
+    observer.observe(socialSection);
+  }
+
+  scrollTopBtn.addEventListener('click', () => {
+    navbar.scrollIntoView({ behavior: 'smooth' });
+    scrollTopBtn.classList.remove('visible');
+  });
+
+  const loader = document.getElementById('loaderOverlay');
+  const loaderMessage = document.getElementById('loaderMessage');
+  let pageLoaded = false;
+
+  const slowMessage = () => {
+    if (!pageLoaded && loaderMessage) {
+      loaderMessage.textContent = 'Internet is slow. Please wait while we finish loading...';
+    }
+  };
+
+  const failMessage = () => {
+    if (!pageLoaded && loaderMessage) {
+      loaderMessage.textContent = 'Failed to connect. Please check your internet and refresh the page.';
+    }
+  };
+
+  const hideLoader = () => {
+    if (loader) {
+      loader.classList.add('loaded');
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 600);
+    }
+  };
+
+  const enterButton = document.getElementById('loaderEnterBtn');
+  if (enterButton) {
+    enterButton.addEventListener('click', hideLoader);
+  }
+
+  const slowTimeout = setTimeout(slowMessage, 15000);
+  const failTimeout = setTimeout(failMessage, 25000);
+  const maxTimeout = setTimeout(() => {
+    if (!pageLoaded) {
+      failMessage();
+      hideLoader();
+    }
+  }, 58000);
+
+  window.addEventListener('load', () => {
+    pageLoaded = true;
+    clearTimeout(slowTimeout);
+    clearTimeout(failTimeout);
+    clearTimeout(maxTimeout);
+
+    if (loaderMessage) {
+      loaderMessage.textContent = 'Welcome to Nexus Phones — your site is ready to use.';
+      loaderMessage.classList.add('loader-welcome');
+    }
+
+    if (loader) {
+      loader.classList.remove('loaded');
+    }
+
+    setTimeout(() => {
+      hideLoader();
+      document.body.classList.add('site-ready');
+    }, 60000);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initPageBehavior);
