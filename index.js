@@ -90,26 +90,41 @@ function initPageBehavior() {
   const scrollTopBtn = document.getElementById('scrollTopBtn');
   const socialSection = document.querySelector('.social-section');
   const navbar = document.querySelector('.navbar');
+  const hero = document.querySelector('.hero');
+  // Helper to toggle visibility safely
+  const setBtnVisible = (visible) => {
+    if (!scrollTopBtn) return;
+    if (visible) scrollTopBtn.classList.add('visible');
+    else scrollTopBtn.classList.remove('visible');
+  };
 
-  const observer = new IntersectionObserver((entries) => {
-    const [entry] = entries;
-    if (entry.isIntersecting) {
-      scrollTopBtn.classList.add('visible');
-    } else {
-      scrollTopBtn.classList.remove('visible');
-    }
-  }, {
-    threshold: 0.25
-  });
-
-  if (socialSection) {
+  // IntersectionObserver (if available) to show/hide based on social section
+  if (typeof IntersectionObserver !== 'undefined' && socialSection && scrollTopBtn) {
+    const observer = new IntersectionObserver((entries) => {
+      const [entry] = entries;
+      setBtnVisible(entry.isIntersecting);
+    }, { threshold: 0.25 });
     observer.observe(socialSection);
   }
 
-  scrollTopBtn.addEventListener('click', () => {
-    navbar.scrollIntoView({ behavior: 'smooth' });
-    scrollTopBtn.classList.remove('visible');
-  });
+  // Fallback/show on scroll: show when scrolled past 220px
+  const onScroll = () => setBtnVisible(window.scrollY > 220);
+  window.addEventListener('scroll', onScroll);
+  // initial check
+  onScroll();
+
+    if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+      // Scroll to the very top of the page
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Optionally focus the document element for accessibility
+      if (document.documentElement && !document.documentElement.hasAttribute('tabindex')) {
+        document.documentElement.setAttribute('tabindex', '-1');
+      }
+      try { document.documentElement.focus({ preventScroll: true }); } catch (e) { /* ignore */ }
+      setBtnVisible(false);
+    });
+  }
 
   const loader = document.getElementById('loaderOverlay');
   const loaderMessage = document.getElementById('loaderMessage');
