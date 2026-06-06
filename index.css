@@ -10,16 +10,16 @@ body {
   color: #e5e7eb;
   background-color: #07101a;
   background-image:
-    linear-gradient(180deg, rgba(7, 16, 26, 0.9) 0%, rgba(15, 23, 42, 0.72) 45%, rgba(11, 20, 35, 0.95) 100%),
+    linear-gradient(180deg, rgba(7, 16, 26, 0.65) 0%, rgba(15, 23, 42, 0.6) 45%, rgba(11, 20, 35, 0.75) 100%),
     url('intro-1779893023.jpg'),
-    radial-gradient(circle at 10% 12%, rgba(59, 130, 246, 0.14), transparent 180px),
-    radial-gradient(circle at 85% 10%, rgba(96, 165, 250, 0.1), transparent 220px),
-    radial-gradient(circle at 45% 90%, rgba(34, 197, 94, 0.08), transparent 270px);
+    radial-gradient(circle at 10% 12%, rgba(59, 130, 246, 0.08), transparent 180px),
+    radial-gradient(circle at 85% 10%, rgba(96, 165, 250, 0.08), transparent 220px),
+    radial-gradient(circle at 45% 90%, rgba(34, 197, 94, 0.06), transparent 270px);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
-  background-blend-mode: overlay;
+  background-blend-mode: normal;
 }
 
 ::selection {
@@ -206,11 +206,11 @@ body.no-scroll {
   position: relative;
   text-align: center;
   padding: 100px 20px 80px;
-  background-image: linear-gradient(rgba(7, 16, 26, 0.78), rgba(7, 16, 26, 0.78)), url('macbook-air-2020-apple-event-black-background-3840x2160-3304.jpg'), radial-gradient(circle at top, rgba(59, 130, 246, 0.18), transparent 45%), linear-gradient(135deg, #1e3a8a, #0f172a);
+  background-image: linear-gradient(rgba(7, 16, 26, 0.5), rgba(7, 16, 26, 0.5)), url('macbook-air-2020-apple-event-black-background-3840x2160-3304.jpg'), radial-gradient(circle at top, rgba(59, 130, 246, 0.14), transparent 45%), linear-gradient(135deg, #1e3a8a, #0f172a);
   background-size: cover;
   background-position: center 20%;
   overflow: hidden;
-  background-blend-mode: overlay;
+  background-blend-mode: normal;
 }
 
 .hero::before {
