@@ -155,7 +155,7 @@ function initPageBehavior() {
     clearTimeout(maxTimeout);
 
     if (loaderMessage) {
-      loaderMessage.textContent = 'Welcome to Nexus Phones — your site is ready to use.';
+      loaderMessage.textContent = 'Site is ready to use.';
       loaderMessage.classList.add('loader-welcome');
     }
 
