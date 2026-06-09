@@ -364,6 +364,12 @@ body.no-scroll {
   border-radius: 22px;
   border: 1px solid rgba(148, 163, 184, 0.1);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-8px);
+  background: rgba(31, 41, 55, 0.94);
 }
 
 .faq-item h3 {
